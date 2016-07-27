@@ -22,8 +22,6 @@ class Implements {
          */
         this.implements = implement_class;
 
-        this.processed = {};
-
         this._CheckInterfaces();
         this._AttachTraits(...trait_params);
 
@@ -41,8 +39,7 @@ class Implements {
          * Instanciates a new Trait class.
          * @type {Object}
          */
-        this.Trait = new Trait(this.implements, ...params);
-        this.implements = this.Trait.implements;
+        this.attach(new Trait(this.implements, ...params));
     }
 
     /**
@@ -55,14 +52,26 @@ class Implements {
          * Instanciates a new Interface class.
          * @type {Object}
          */
-        let newInterface = new Interface(this.implements);
-        this.implements = newInterface.implements;
+        this.attach(new Interface(this.implements));
+    }
 
-        Object.defineProperty(this.implements.prototype, 'Interface', {
-            enumerable: false,
-            editable: false,
-            writable: false,
-            value: newInterface
+    /**
+     * Attaches the a given class to the implemented class.
+     * @param  {Object} attachment Class to attach.
+     * @return {void}
+     */
+    attach(attachment) {
+        if(typeof attachment.implements === 'undefined') {
+            throw new Error('Cannot attach an unimplemented class.');
+        }
+
+        this.implements = attachment.implements;
+
+        Object.defineProperty(this.implements.prototype, attachment.constructor.name, {
+            'enumerable': false,
+            'editable': false,
+            'writable': false,
+            'value': attachment
         });
     }
 
@@ -71,8 +80,8 @@ class Implements {
      * @todo Check and sort the dependancies into the right order
      * as shown in http://stackoverflow.com/questions/20058391/javascript-dependency-injection
      *
-     * @param  {Class} Depend Dependancy to Injection
-     * @param  {Mixed} param  Parameter(s) to use.
+     * @param  {Class} Depend Dependancy to inject
+     * @param  {...Mixed} param  Parameters to use.
      * @return {Class}        Returns the dependancy
      */
     static dependancy(Depend, ...params) {
