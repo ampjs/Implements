@@ -2,7 +2,7 @@
   "name": "implements",
   "version": "0.1.0",
   "description": "Add Traits and Interfaces to your javascript classes.",
-  "main": "implements.js",
+  "main": "./implements.js",
   "options": {},
   "scripts": {
     "watch": "npm-watch",
@@ -10,8 +10,15 @@
     "test:mocha": "node_modules/.bin/mocha --growl test/tests.js",
     "test:lint": "eslint -c .eslint src/*",
     "compile": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
-    "compile:examples": "node_modules/babel-cli/bin/babel.js examples/src --out-dir examples/lib; node examples/example.js",
+    "compile:examples": "node_modules/babel-cli/bin/babel.js examples/src --out-dir examples/lib",
     "build:dev": "npm run test:lint; npm run compile;"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampjs/Implements.git"
+  },
+  "bugs": {
+      "url": "https://github.com/ampjs/Implements/issues"
   },
   "watch": {
     "test": {
@@ -33,6 +40,12 @@
     "es6"
   ],
   "author": "Paul Taylor <hello@ampersandwich.co.uk> (http://ampersandwich.co.uk)",
+  "maintainers": [
+    {
+      "email": "hello@ampersandwich.co.uk",
+      "name": "ampersarnie"
+    }
+  ],
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.6.5",
