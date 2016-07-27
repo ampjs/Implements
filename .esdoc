@@ -1,0 +1,14 @@
+{
+  "source": "./src",
+  "destination": "./documentation",
+  "access": ["public", "private"],
+  "test": {
+    "type": "mocha",
+    "source": "./test"
+  },
+  "title": "Implements",
+  "manual": {
+    "usage": ["./manual/usage.md"]
+  },
+  "lint": true
+}

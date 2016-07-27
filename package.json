@@ -1,0 +1,47 @@
+{
+  "name": "implements",
+  "version": "0.1.0",
+  "description": "Add Traits and Interfaces to your javascript classes.",
+  "main": "implements.js",
+  "options": {},
+  "scripts": {
+    "watch": "npm-watch",
+    "test": "npm run compile; npm run test:lint; npm run test:mocha",
+    "test:mocha": "node_modules/.bin/mocha --growl test/tests.js",
+    "test:lint": "eslint -c .eslint src/*",
+    "compile": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "compile:examples": "node_modules/babel-cli/bin/babel.js examples/src --out-dir examples/lib; node examples/example.js",
+    "build:dev": "npm run test:lint; npm run compile;"
+  },
+  "watch": {
+    "test": {
+        "patterns": ["src", "test"],
+        "extensions": "js",
+        "quiet": true
+    }
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "traits",
+    "interface",
+    "es6"
+  ],
+  "author": "Paul Taylor <hello@ampersandwich.co.uk> (http://ampersandwich.co.uk)",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.7.0",
+    "babel-preset-es2015": "^6.6.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.1.1",
+    "mocha": "^2.4.5",
+    "npm-watch": "^0.1.5"
+  },
+  "dependencies": {}
+}
