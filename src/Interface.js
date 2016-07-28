@@ -39,6 +39,10 @@ class ImplementsInterface {
 
         this.check();
 
+        /**
+         * The current interface in the loop.
+         * @type {Object}
+         */
         this.current = null;
 
         return this;
@@ -99,7 +103,11 @@ class ImplementsInterface {
     }
 
     /**
+     * Get a method from the current interface.
      * @todo Combine with _getClassMethod
+     *
+     * @param {String} method - The method name.
+     * @return {Function|null} - The method of the current interface.
      */
     _getInterfaceMethod(method) {
         let the_method = this.current.prototype[method];
@@ -119,7 +127,11 @@ class ImplementsInterface {
     }
 
     /**
+     * Get a method from the current interface.
      * @todo Combine with _getInterfaceMethod
+     *
+     * @param {String} method - The method name.
+     * @return {Function|null} - The method of the current interface.
      */
     _getClassMethod(method) {
         let the_method = this.implements.prototype[method];
