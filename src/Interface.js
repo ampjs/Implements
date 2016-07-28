@@ -107,41 +107,18 @@ class ImplementsInterface {
      * @todo Combine with _getClassMethod
      *
      * @param {String} method - The method name.
+     * @param {Object} get_from - The target.
      * @return {Function|null} - The method of the current interface.
      */
-    _getInterfaceMethod(method) {
-        let the_method = this.current.prototype[method];
+    _getMethod(method, get_from) {
+        let the_method = get_from.prototype[method];
 
         if(typeof the_method !== 'undefined') {
             return the_method;
         }
 
         // Maybe static?
-        the_method = this.current[method];
-
-        if(typeof the_method !== 'undefined') {
-            return the_method;
-        }
-
-        return null;
-    }
-
-    /**
-     * Get a method from the current interface.
-     * @todo Combine with _getInterfaceMethod
-     *
-     * @param {String} method - The method name.
-     * @return {Function|null} - The method of the current interface.
-     */
-    _getClassMethod(method) {
-        let the_method = this.implements.prototype[method];
-
-        if(typeof the_method !== 'undefined') {
-            return the_method;
-        }
-
-        // Maybe static?
-        the_method = this.implements[method];
+        the_method = get_from[method];
 
         if(typeof the_method !== 'undefined') {
             return the_method;
@@ -255,8 +232,8 @@ class ImplementsInterface {
      * @return {boolean}       Whether the arguments match or not.
      */
     _checkInterfaceArguments(method) {
-        let class_method_args = this._interfaceArguments(this._getClassMethod(method)),
-            interface_method_args = this._interfaceArguments(this._getInterfaceMethod(method));
+        let class_method_args = this._interfaceArguments(this._getMethod(method, this.implements)),
+            interface_method_args = this._interfaceArguments(this._getMethod(method, this.current));
 
         if(interface_method_args === class_method_args) {
             return true;
