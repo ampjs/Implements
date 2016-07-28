@@ -44,6 +44,9 @@ class MyClass {
 
     myInterfaceMethod() {
         // This is an standard interface method.
+        // ...
+        // Calling the trait method.
+        return this.myTraitMethod();
     }
 
     anotherInterfaceMethod(foo, bar) {
