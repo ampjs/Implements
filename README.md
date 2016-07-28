@@ -2,7 +2,7 @@
 
 ## Installation
 ```
-npm install implements
+npm install @ampersarnie/implements
 ```
 
 ## Example
@@ -29,7 +29,7 @@ export default MyTrait
 
 __Class__
 ```js
-import Implements from 'implements';
+import { Implements } from '@ampersarnie/implements';
 import MyInterface from './MyInterface.js';
 import MyTrait from './MyTrait.js';
 
