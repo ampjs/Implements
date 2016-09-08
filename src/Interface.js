@@ -7,7 +7,7 @@ class ImplementsInterface {
 
     /**
      * Class constructor
-     * @param  {Class} implement - The class for traits to be implemented on.
+     * @param  {Class} implement - The class for interfaces to be implemented on.
      * @return {Object}           Returns `this`
      */
     constructor(implement) {
