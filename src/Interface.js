@@ -52,11 +52,13 @@ class ImplementsInterface {
      * Apply interfaces to a given class.
      */
     static apply(the_class, interfaces = []) {
-        Object.defineProperty(the_class.prototype, 'interfaces', {
-            value: function() {
-                return interfaces;
-            }
-        });
+        if(typeof the_class.prototype.interfaces === 'undefined') {
+            Object.defineProperty(the_class.prototype, 'interfaces', {
+                value: function() {
+                    return interfaces;
+                }
+            });
+        }
 
         return new this(the_class);
     }
