@@ -49,6 +49,19 @@ class ImplementsInterface {
     }
 
     /**
+     * Apply interfaces to a given class.
+     */
+    static apply(the_class, interfaces = []) {
+        Object.defineProperty(the_class.prototype, 'interfaces', {
+            value: function() {
+                return interfaces;
+            }
+        });
+
+        return new this(the_class);
+    }
+
+    /**
      * Typeof to check whether the interfaces method exists by checking
      * if it's a function.
      * @return {Boolean} Whether interfaces method exists.
