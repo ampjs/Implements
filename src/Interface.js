@@ -13,7 +13,7 @@ class ImplementsInterface {
     constructor(implement) {
 
         /**
-         * The target class to have traits implemented on.
+         * The target class to have interfaces implemented on.
          * @type {Object}
          */
         this.implements = implement;
