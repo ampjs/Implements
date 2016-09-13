@@ -50,11 +50,15 @@ class ImplementsInterface {
 
     /**
      * Apply interfaces to a given class.
+     *
+     * @param   {Class}     the_class   Uninstantiated instance of a class.
+     * @param   {Array}     interfaces  An array of interfaces to implement.
+     * @return  {Object}                Instantiated instance of this.
      */
     static apply(the_class, interfaces = []) {
         if(typeof the_class.prototype.interfaces === 'undefined') {
             Object.defineProperty(the_class.prototype, 'interfaces', {
-                value: function() {
+                'value': () => {
                     return interfaces;
                 }
             });
