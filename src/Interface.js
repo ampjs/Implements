@@ -7,13 +7,13 @@ class ImplementsInterface {
 
     /**
      * Class constructor
-     * @param  {Class} implement - The class for traits to be implemented on.
+     * @param  {Class} implement - The class for interfaces to be implemented on.
      * @return {Object}           Returns `this`
      */
     constructor(implement) {
 
         /**
-         * The target class to have traits implemented on.
+         * The target class to have interfaces implemented on.
          * @type {Object}
          */
         this.implements = implement;
@@ -46,6 +46,25 @@ class ImplementsInterface {
         this.current = null;
 
         return this;
+    }
+
+    /**
+     * Apply interfaces to a given class.
+     *
+     * @param   {Class}     the_class   Uninstantiated instance of a class.
+     * @param   {Array}     interfaces  An array of interfaces to implement.
+     * @return  {Object}                Instantiated instance of this.
+     */
+    static apply(the_class, interfaces = []) {
+        if(typeof the_class.prototype.interfaces === 'undefined') {
+            Object.defineProperty(the_class.prototype, 'interfaces', {
+                'value': () => {
+                    return interfaces;
+                }
+            });
+        }
+
+        return new this(the_class);
     }
 
     /**
