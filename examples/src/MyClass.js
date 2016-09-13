@@ -1,4 +1,4 @@
-import { Implements, Interfaces, Traits } from '../../implements.js';
+import { Implements, Interface, Trait } from '../../implements.js';
 import MyInterface from './MyInterface.js';
 import MyTrait from './MyTrait.js';
 import MyDependancy from './MyDependancy.js';
@@ -31,6 +31,7 @@ class MyClass extends TestClass {
     }
 
     interfaceMethod(exampleArgument, withDefault) {
+        console.log(this.baseTrait());
         return this;
     }
 
@@ -47,8 +48,8 @@ let Class = new Implements(MyClass);
 
 export {
     Implements,
-    Interfaces,
-    Traits,
+    Interface,
+    Trait,
     Class,
     MyInterface,
     MyTrait,

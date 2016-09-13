@@ -33,3 +33,18 @@ describe('Implemented Class Tests', function() {
         chai.expect(except).to.deep.equal(['constructor', 'length', 'name', 'prototype']);
     });
 });
+
+describe('Apply seperately', function() {
+
+    class TestInterfaceClass {
+
+    }
+
+    class TestInterface {
+        testMethod() {}
+    }
+
+    it('Can apply.', function() {
+        console.log('Processed', Interface.apply(TestInterfaceClass, [TestInterface]));
+    });
+});
