@@ -37,7 +37,9 @@ describe('Implemented Class Tests', function() {
 describe('Apply seperately', function() {
 
     class TestInterfaceClass {
-
+        testMethod() {
+            return true;
+        }
     }
 
     class TestInterface {
@@ -45,6 +47,10 @@ describe('Apply seperately', function() {
     }
 
     it('Can apply.', function() {
-        console.log('Processed', Interface.apply(TestInterfaceClass, [TestInterface]));
+        try {
+            Interface.apply(TestInterfaceClass, [TestInterface]);
+        } catch(e) {
+            throw new Error(e);
+        }
     });
 });
