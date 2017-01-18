@@ -69,6 +69,7 @@ class Implements {
         this.implements = attachment.implements;
 
         Object.defineProperty(this.implements.prototype, attachment.constructor.name, {
+            'configurable': true,
             'enumerable': false,
             'editable': false,
             'writable': false,
