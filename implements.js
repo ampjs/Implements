@@ -1,13 +1,11 @@
 import {
     Implements,
     Interface,
-    Trait,
-    Type
+    Trait
 } from './src/Implements.js';
 
 export {
     Implements,
     Interface,
-    Trait,
-    Type
+    Trait
 };

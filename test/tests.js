@@ -15,7 +15,3 @@ describe('Traits', () => {
 describe('Dependancies', () => {
     require('./test-dependancies.js');
 });
-
-describe('Type Decleration', () => {
-    require('./test-type.js');
-});
