@@ -1,6 +1,5 @@
 import Interface from './Interface.js';
 import Trait from './Trait.js';
-import "babel-polyfill";
 
 /**
  * A class for implementation of Interfaces and Traits.
@@ -69,11 +68,11 @@ class Implements {
         this.implements = attachment.implements;
 
         Object.defineProperty(this.implements.prototype, attachment.constructor.name, {
-            'configurable': true,
-            'enumerable': false,
-            'editable': false,
-            'writable': false,
-            'value': attachment
+            configurable: true,
+            enumerable: false,
+            editable: false,
+            writable: false,
+            value: attachment
         });
     }
 

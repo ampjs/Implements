@@ -1,1 +1,11 @@
-module.exports = exports.default = require('./lib/Implements.js');
+import {
+    Implements,
+    Interface,
+    Trait
+} from './src/Implements.js';
+
+export {
+    Implements,
+    Interface,
+    Trait
+};

@@ -1,17 +1,17 @@
 let assert = require('assert');
 
-describe('Implements', function() {
+describe('Implements', () => {
     require('./test-implements.js');
 });
 
-describe('Interfaces', function() {
+describe('Interfaces', () => {
     require('./interface/interfaces.js');
 });
 
-describe('Traits', function() {
+describe('Traits', () => {
     require('./test-traits.js');
 });
 
-describe('Dependancies', function() {
+describe('Dependancies', () => {
     require('./test-dependancies.js');
 });
