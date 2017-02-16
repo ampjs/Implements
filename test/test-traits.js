@@ -1,4 +1,4 @@
-let {
+import {
     Implements,
     Interfaces,
     Traits,
@@ -6,7 +6,7 @@ let {
     MyInterface,
     MyTrait,
     MyDependancy
-} = require('../examples/lib/MyClass.js');
+} from '../examples/src/MyClass.js';
 
 
 describe('Do traits work in self?', function() {

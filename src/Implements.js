@@ -1,6 +1,6 @@
 import Interface from './Interface.js';
 import Trait from './Trait.js';
-import "babel-polyfill";
+import {Type, Types} from './Type.js';
 
 /**
  * A class for implementation of Interfaces and Traits.
@@ -106,5 +106,6 @@ class Implements {
 export {
     Implements,
     Interface,
-    Trait
+    Trait,
+    Type
 };
