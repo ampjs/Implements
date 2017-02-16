@@ -194,4 +194,4 @@ Trait in self..
 console.log(new _MyClass.Class().interfaceMethod());
 ```
 
-1487271433000
+1487271999000
