@@ -1,7 +1,7 @@
-let chai = require('chai'),
-    Interface = require('../../lib/Interface.js').default;
+import chai from 'chai';
+import Interface from '../../src/Interface.js';
 
-describe('Units', function() {
+describe('Units', () => {
     class TestInterface {
         interfaceMethod() {}
     }
@@ -18,15 +18,15 @@ describe('Units', function() {
 
     let InterfaceClass = new Interface(TestClass);
 
-    it('interfaces_is_func is a boolean.', function() {
+    it('interfaces_is_func is a boolean.', () => {
         chai.expect(InterfaceClass.interfaces_is_func).to.be.true;
     });
 
-    it('interfaces_is_object is a boolean.', function() {
+    it('interfaces_is_object is a boolean.', () => {
         chai.expect(InterfaceClass.interfaces_is_object).to.be.true;
     });
 
-    it('interfaces_is_func is an object.', function() {
+    it('interfaces_is_func is an object.', () => {
         chai.expect(InterfaceClass.interfaces_is_object).to.be.true;
     })
 });

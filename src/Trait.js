@@ -32,8 +32,8 @@ class ImplementsTrait {
          * @type {Object}
          */
         this.attached = {
-            'traits': [],
-            'methods': [],
+            traits: [],
+            methods: [],
         };
 
         this.addArray();

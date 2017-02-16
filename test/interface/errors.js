@@ -1,8 +1,8 @@
-let chai = require('chai'),
-    Interface = require('../../lib/Interface.js').default;
+import chai from 'chai';
+import Interface from '../../src/Interface.js';
 
-describe('Errors', function() {
-    it('Expect test class to throw missing method Error.', function() {
+describe('Errors', () => {
+    it('Expect test class to throw missing method Error.', () => {
         class TestInterface {
             interfaceMethod() {}
         }
@@ -13,12 +13,12 @@ describe('Errors', function() {
             }
         }
 
-        chai.expect(function() {
+        chai.expect(() => {
             let MyClassImplemented = new (new Interface(TestClass)).implements;
         }).to.throw('Interface: interfaceMethod required in TestClass');
     });
 
-    it('Expect test class to throw missing arguments Error.', function() {
+    it('Expect test class to throw missing arguments Error.', () => {
         class TestInterface {
             interfaceMethod(arg, another) {}
         }
@@ -33,12 +33,12 @@ describe('Errors', function() {
             }
         }
 
-        chai.expect(function() {
+        chai.expect(() => {
             let MyClassImplemented = new (new Interface(TestClass)).implements;
         }).to.throw('Interface: interfaceMethod arguments do not match.');
     });
 
-    it('Expect test class to not throw Errors.', function() {
+    it('Expect test class to not throw Errors.', () => {
         class TestInterface {
             interfaceMethod(arg) {}
         }
@@ -53,7 +53,7 @@ describe('Errors', function() {
             }
         }
 
-        let createInterfaceCall = function() {
+        let createInterfaceCall = () => {
             let MyClassImplemented = new (new Interface(TestClass)).implements;
             return MyClassImplemented;
         }

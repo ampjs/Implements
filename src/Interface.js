@@ -24,8 +24,8 @@ class ImplementsInterface {
          * @type {Object}
          */
         this.attached = {
-            'interfaces': [],
-            'methods': [],
+            interfaces: [],
+            methods: [],
         };
 
         /**
@@ -58,7 +58,7 @@ class ImplementsInterface {
     static apply(the_class, interfaces = []) {
         if(typeof the_class.prototype.interfaces === 'undefined') {
             Object.defineProperty(the_class.prototype, 'interfaces', {
-                'value': () => {
+                value: () => {
                     return interfaces;
                 }
             });
