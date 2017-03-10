@@ -3,11 +3,11 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const pack = require('./../package.json');
 
-let libFile = 'Implements.min.js';
+let libFile = 'lib/Implements.min.js';
 
 module.exports = {
     entry: {
-        './../Implements': './Implements.min.js'
+        './../Implements': './Implements.js'
         // './test/tests': './test/tests.js'
     },
     output: {

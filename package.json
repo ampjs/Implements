@@ -2,7 +2,7 @@
   "name": "@ampersarnie/implements",
   "version": "0.3.3",
   "description": "Add Traits and Interfaces to your javascript classes.",
-  "main": "./implements.js",
+  "main": "./lib/implements.min.js",
   "options": {},
   "scripts": {
     "mocha": "./node_modules/.bin/mocha --growl test/tests.js --compilers js:babel-core/register -r jsdom-global/register",
@@ -10,7 +10,7 @@
     "build": "npm run build:rup && npm run build:webpack && npm run build:gzip",
     "build:rup": "rollup -c config/rollup.config.js",
     "build:webpack": "./node_modules/.bin/webpack --config config/webpack.config.js",
-    "build:gzip": "gzip -c implements.min.js > implements.min.js.gz",
+    "build:gzip": "gzip -c lib/implements.min.js > lib/implements.min.js.gz",
     "build:test": "npm run build; npm run mocha",
     "prepublish": "npm run build; npm run mocha; npm run -s mocha:report",
     "lint": "eslint src/* -c config/.eslintrc --ignore-path config/.eslintignore"
