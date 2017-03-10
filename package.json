@@ -1,6 +1,6 @@
 {
   "name": "@ampersarnie/implements",
-  "version": "0.3.3",
+  "version": "0.3.3.1",
   "description": "Add Traits and Interfaces to your javascript classes.",
   "main": "./lib/implements.min.js",
   "options": {},
